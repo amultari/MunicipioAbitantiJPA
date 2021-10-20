@@ -42,7 +42,7 @@ public class TestMunicipioAbitante {
 
 			testLazyInitExc(municipioService, abitanteService);
 
-		} catch (Exception e) {
+		} catch (Throwable e) {
 			e.printStackTrace();
 		} finally {
 			// questa è necessaria per chiudere tutte le connessioni quindi rilasciare il
