@@ -115,7 +115,7 @@ public class TestMunicipioAbitante {
 		abitanteService.inserisciNuovo(nuovoAbitante);
 
 		Long idAbitanteInserito = nuovoAbitante.getId();
-		abitanteService.rimuovi(abitanteService.caricaSingoloAbitante(idAbitanteInserito));
+		abitanteService.rimuovi(idAbitanteInserito);
 		// proviamo a vedere se è stato rimosso
 		if (abitanteService.caricaSingoloAbitante(idAbitanteInserito) != null)
 			throw new RuntimeException("testRimozioneAbitante fallito: record non cancellato ");
@@ -148,8 +148,8 @@ public class TestMunicipioAbitante {
 			throw new RuntimeException("testCercaTuttiGliAbitantiConNome fallito: numero record inatteso ");
 
 		// clean up code
-		abitanteService.rimuovi(nuovoAbitante);
-		abitanteService.rimuovi(nuovoAbitante2);
+		abitanteService.rimuovi(nuovoAbitante.getId());
+		abitanteService.rimuovi(nuovoAbitante2.getId());
 
 		System.out.println(".......testCercaTuttiGliAbitantiConNome fine: PASSED.............");
 	}

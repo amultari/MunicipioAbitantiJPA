@@ -15,7 +15,7 @@ public interface AbitanteService {
 
 	public void inserisciNuovo(Abitante abitanteInstance) throws Exception;
 
-	public void rimuovi(Abitante abitanteInstance) throws Exception;
+	public void rimuovi(Long idAbitanteInstance) throws Exception;
 
 	public List<Abitante> cercaTuttiGliAbitantiConNome(String nome) throws Exception;
 	

@@ -108,7 +108,7 @@ public class AbitanteServiceImpl implements AbitanteService {
 	}
 
 	@Override
-	public void rimuovi(Abitante abitanteInstance) throws Exception {
+	public void rimuovi(Long idAbitanteInstance) throws Exception {
 		// questo è come una connection
 		EntityManager entityManager = EntityManagerUtil.getEntityManager();
 
@@ -120,7 +120,7 @@ public class AbitanteServiceImpl implements AbitanteService {
 			abitanteDAO.setEntityManager(entityManager);
 
 			// eseguo quello che realmente devo fare
-			abitanteDAO.delete(abitanteInstance);
+			abitanteDAO.delete(abitanteDAO.get(idAbitanteInstance));
 
 			entityManager.getTransaction().commit();
 		} catch (Exception e) {
